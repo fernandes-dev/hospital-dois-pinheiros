@@ -2,7 +2,7 @@
   <v-row justify="center" class="mx-auto">
     <v-col cols="12" sm="10" md="9">
       <v-row justify="start" class="col-12">
-        <div class="title-guide">{{title}}</div>
+        <div class="title-guide" v-html="title"></div>
       </v-row>
 
       <!-- drop items -->
@@ -18,7 +18,7 @@
                   <v-expansion-panel-header>
                     <v-row>
                       <v-col cols="11" class="dics-header d-flex justify-start">
-                        <strong>{{item.title}}</strong>
+                        <strong v-html="item.title"></strong>
                       </v-col>
                     </v-row>
                   </v-expansion-panel-header>
