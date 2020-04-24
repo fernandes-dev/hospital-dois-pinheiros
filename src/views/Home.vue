@@ -23,8 +23,8 @@
         </v-row>
       </v-container>
     </v-content>
-    <div class="bg-maternity-home">
-      <Maternity />
+    <div class="bg-tab-menu-home">
+      <Maternity class="container" />
     </div>
     <div class="clinic-body">
       <ClinicBody class="container" />
@@ -32,10 +32,10 @@
     <div class="mural">
       <Mural />
     </div>
-    <div class="press-room-home">
+    <div class="press-room-home pb-10">
       <PressRoom class="container" />
     </div>
-    <div class="imageclinic-home">
+    <div>
       <ImageClinic />
     </div>
   </v-app>
@@ -73,7 +73,7 @@ export default {
 .press-room-home {
   background-color: #f5f5f5 !important;
 }
-.bg-maternity-home {
+.bg-tab-menu-home {
   border-top: 0.5px solid rgb(184, 184, 184);
   border-bottom: 0.5px solid rgb(184, 184, 184);
   padding-bottom: 40px;

@@ -5,14 +5,16 @@
         <div class="title-structure">{{title}}</div>
       </v-row>
       <v-row>
-        <v-col cols="12" sm="5" class="d-flex justify-end col-img">
-          <v-img width="330px" height="395px" src="/img/about-history.png">
-            <template v-slot:placeholder>
-              <v-row class="fill-height ma-0" align="center" justify="center">
-                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-              </v-row>
-            </template>
-          </v-img>
+        <v-col cols="12" sm="5" class="col-img">
+          <v-card elevation="4">
+            <v-img width="100%" height="390px" max-height="400px" src="/img/about-history.png">
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                </v-row>
+              </template>
+            </v-img>
+          </v-card>
         </v-col>
         <v-col cols="12" sm="7" class="col-structure">
           <v-expansion-panels accordion focusable>
@@ -51,7 +53,7 @@ export default {
 <style  scoped>
 .col-structure {
   padding-top: 20px;
-  padding: 20px;
+  margin: 0px 0px 0px 0px;
 }
 
 .structure-header {
@@ -65,5 +67,6 @@ export default {
 
 .col-img {
   padding: 20px;
+  width: 100%;
 }
 </style>

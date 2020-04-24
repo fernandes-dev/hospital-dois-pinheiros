@@ -1,14 +1,21 @@
 <template>
   <div class="mural-main">
     <v-row class="mural-content">
-      <v-img class="mural-card" v-for="(item, i) in items" :key="i" :src="item.img">
+      <v-img
+        height="100%"
+        width="100%"
+        class="mural-card"
+        v-for="(item, i) in items"
+        :key="i"
+        :src="item.img"
+      >
         <template v-slot:placeholder>
           <v-row class="fill-height ma-0" align="center" justify="center">
             <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
           </v-row>
         </template>
         <v-hover v-if="item.url.length >2 " v-slot:default="{ hover }">
-          <v-img height="250" :src="item.img">
+          <v-img :src="item.img">
             <v-expand-transition>
               <div
                 v-if="hover"
@@ -20,11 +27,6 @@
                 </v-btn>
               </div>
             </v-expand-transition>
-            <template v-slot:placeholder>
-              <v-row class="fill-height ma-0" align="center" justify="center">
-                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-              </v-row>
-            </template>
           </v-img>
         </v-hover>
       </v-img>

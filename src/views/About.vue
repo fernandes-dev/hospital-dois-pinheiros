@@ -13,17 +13,19 @@
               </v-col>
             </v-row>
             <v-row>
-              <v-col cols="11" sm="7" class="text-about">
+              <v-col cols="11" sm="12" md="7" class="text-about">
                 <div v-html="text"></div>
               </v-col>
-              <v-col class="ml-3" cols="12" sm="4">
-                <v-img height="300px" width="300px" src="/img/who-we.png">
-                  <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0" align="center" justify="center">
-                      <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                    </v-row>
-                  </template>
-                </v-img>
+              <v-col class="col-img-who" cols="12" sm="11" md="5">
+                <v-card elevation="4">
+                  <v-img height="100%" width="100%" max-height="300px" src="/img/who-we.png">
+                    <template v-slot:placeholder>
+                      <v-row class="fill-height ma-0" align="center" justify="center">
+                        <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                      </v-row>
+                    </template>
+                  </v-img>
+                </v-card>
               </v-col>
             </v-row>
           </div>
@@ -31,7 +33,7 @@
       </v-row>
     </div>
     <div class="clinic-body">
-      <ClinicBody :title="'Conheça Nossos Especialistas'" />
+      <ClinicBody class="container" :title="'Conheça Nossos Especialistas'" />
     </div>
     <div class="structure">
       <Structure :items="structureItems" :title="'Estrutura'" />
@@ -48,7 +50,7 @@
             </v-row>
             <v-row justify="center">
               <v-col cols="12">
-                <p class="text-waste" v-html="textWaste"></p>
+                <div class="text-waste" v-html="textWaste"></div>
               </v-col>
             </v-row>
           </v-col>
@@ -172,6 +174,12 @@ export default {
 </script>
 
 <style scoped>
+.history {
+  margin-bottom: 50px;
+}
+.clinic-body {
+  margin-bottom: 80px;
+}
 .title-waste {
   font-size: 1.9em;
   padding-bottom: 5px;
@@ -204,5 +212,8 @@ export default {
 
 .structure {
   background-color: #f5f5f5 !important;
+}
+.col-img-who {
+  padding: 0 20px;
 }
 </style>
