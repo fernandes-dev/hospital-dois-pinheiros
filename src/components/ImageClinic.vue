@@ -1,58 +1,16 @@
 <template>
-  <v-container class="content-imgclinic col-12 col-sm-9 bg-imgclinic">
-    <div class="imageclinic d-flex justify-center">
-      <img src="/img/logo-diagn-img.png" width="300px" />
-    </div>
-    <v-row>
-      <v-tabs
-        class="tab-imageclinic"
-        v-model="active"
-        color="#217b43"
-        background-color
-        slider-color="#217b43"
-        show-arrows
-        centered
-      >
-        <v-tab class="tab-title" v-for="item in items" :key="item.title" ripple>{{ item.title }}</v-tab>
-
-        <v-tabs-items v-model="active">
-          <v-tab-item
-            class="pt-10 bg-imgclinic imageclinic-item"
-            v-for="(item) in items"
-            :key="item.subtitle"
-          >
-            <v-row>
-              <v-col cols="12" sm="6">
-                <v-img width="600px" max-height="300px" :src="item.img">
-                  <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0" align="center" justify="center">
-                      <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                    </v-row>
-                  </template>
-                </v-img>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-card class="bg-imgclinic" flat>
-                  <v-row class="ma-2">
-                    <v-card-text class="tab-subtitle">{{ item.subtitle }}</v-card-text>
-                    <v-card-text class="tab-content">{{ item.description }}</v-card-text>
-                  </v-row>
-                  <v-row justify="start" class="ma-2">
-                    <v-btn class="button-tab" small color="#217b43">Leia mais</v-btn>
-                  </v-row>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-tab-item>
-        </v-tabs-items>
-      </v-tabs>
-    </v-row>
-  </v-container>
+  <TabMenu :items="items" :image="'/img/logo-diagn-img.png'" />
 </template>
 
 <script>
+
+import TabMenu from '@/components/TabMenu'
+
 export default {
   name: 'Maternity',
+  components: {
+    TabMenu
+  },
   data() {
     return {
       active: null,

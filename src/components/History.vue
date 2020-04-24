@@ -6,7 +6,6 @@
           <v-col cols="auto">
             <div class="title-history">{{title}}</div>
           </v-col>
-
           <v-col cols="auto">
             <div class="subtitle-history">
               <strong>|</strong>
@@ -14,18 +13,22 @@
             </div>
           </v-col>
         </v-row>
-        <v-row>
-          <v-col class="ml-3" cols="12" sm="4">
-            <v-img height="300px" width="300px" src="/img/about-history.png">
-              <template v-slot:placeholder>
-                <v-row class="fill-height ma-0" align="center" justify="center">
-                  <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                </v-row>
-              </template>
-            </v-img>
+        <v-row justify="center">
+          <v-col cols="11" sm="9" md="5">
+            <v-card>
+              <v-img height="100%" width="100%" max-height="300px" src="/img/about-history.png">
+                <template v-slot:placeholder>
+                  <v-row class="fill-height ma-0" align="center" justify="center">
+                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                  </v-row>
+                </template>
+              </v-img>
+            </v-card>
           </v-col>
-          <v-col cols="12" sm="7" style="max-height: 300px" class="overflow-y-auto text-history">
-            <div v-html="text"></div>
+          <v-col cols="11" sm="9" md="7">
+            <v-card class="text-history overflow-y-auto">
+              <div v-html="text"></div>
+            </v-card>
           </v-col>
         </v-row>
       </v-container>
@@ -69,8 +72,8 @@ export default {
 }
 
 .text-history {
-  margin-top: 15px;
-  padding: 25px;
+  max-height: 300px;
+  padding: 10px;
 }
 
 .text-history::-webkit-scrollbar-track {
@@ -84,5 +87,8 @@ export default {
 
 .text-history::-webkit-scrollbar-thumb {
   background: #217b43 !important;
+}
+.col-history-text {
+  padding: 10px 0;
 }
 </style>

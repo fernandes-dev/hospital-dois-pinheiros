@@ -1,5 +1,5 @@
 <template>
-  <v-sheet class="bg-press-room d-flex align-center flex-column" elevation="0">
+  <v-sheet class="bg-press-room d-flex align-center flex-column">
     <div class="press-room">
       <v-row>
         Sala de Imprensa
@@ -13,18 +13,16 @@
         :key="i"
         v-slot:default="{active, toggle}"
       >
-        <v-card max-height="390px" elevation="2" class="card-press" @click="toggle">
-          <v-img height="220" :src="item.img">
-            <template v-slot:placeholder>
-              <v-row class="fill-height ma-0" align="center" justify="center">
-                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-              </v-row>
+        <v-card @click="toggle">
+          <v-toolbar :src="item.img" height="220px" max-height="390px" width="100%" extended>
+            <template v-slot:extension>
+              <v-btn color="#217b43" class="icon-press" elevation="0" absolute bottom left fab>
+                <v-icon color="white">mdi-{{item.icon}}</v-icon>
+              </v-btn>
             </template>
-          </v-img>
-          <div class="body-press">
-            <div class="name-press">{{item.name}}</div>
-            <div class="descrip-press">{{item.description}}</div>
-          </div>
+          </v-toolbar>
+          <v-card-title class="title-press">{{item.title}}</v-card-title>
+          <v-card-text class="descrip-press">{{item.description}}</v-card-text>
         </v-card>
       </v-slide-item>
     </v-slide-group>
@@ -40,9 +38,10 @@ export default {
       model: null,
       clockIcon: '/img/icons/clock.svg',
       items: [
-        { id: 1, name: 'Releases', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/1.png', date: '10/02/2020', icon: 'film' },
-        { id: 2, name: 'Videos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/2.png', date: '10/02/2020', icon: 'film' },
-        { id: 3, name: 'Fotos e Eventos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/3.png', date: '10/02/2020', icon: 'film' },
+        { id: 1, title: 'Releases', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/1.png', date: '10/02/2020', icon: 'newspaper' },
+        { id: 2, title: 'Videos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/2.png', date: '10/02/2020', icon: 'video' },
+        { id: 3, title: 'Fotos e Eventos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/3.png', date: '10/02/2020', icon: 'camera' },
+        { id: 4, title: 'Fotos e Eventos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/3.png', date: '10/02/2020', icon: 'camera' },
 
       ]
     }
@@ -55,9 +54,6 @@ export default {
   cursor: default;
 }
 
-.body-press {
-  padding: 5px;
-}
 .bg-press-room {
   background-color: #f5f5f5 !important;
 }
@@ -73,16 +69,14 @@ export default {
 }
 
 .title-press {
-  font-size: 0.8em;
+  font-size: 1.3em;
   font-weight: bold;
-  padding: 0 0 0 4px !important;
-  margin-top: -4px;
+  padding-top: 35px;
+  padding-bottom: 0;
 }
 
 .descrip-press {
-  font-size: 0.8em;
-  padding: 0 0 0 4px !important;
-  margin-top: 12px;
+  font-size: 1em;
 }
 
 .press-room {
