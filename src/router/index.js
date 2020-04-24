@@ -7,6 +7,8 @@ import Attendance from '../views/Attendance.vue'
 import Services from '../views/Services.vue'
 import Social from '../views/Social.vue'
 import About from '../views/About.vue'
+import Articles from '../views/Articles.vue'
+import Article from '../views/Article.vue'
 
 const base_name = 'Hospital Dois Pinheiros'
 
@@ -47,7 +49,17 @@ const routes = [
     path: '/servicos',
     name: 'Serviços - '+ base_name,
     component: Services
-  }
+  },
+  {
+    path: '/artigos',
+    name: 'Artigo - '+ base_name,
+    component: Articles
+  },
+  {
+    path: '/artigos/:id',
+    name: 'Artigo - '+ base_name,
+    component: Article
+  },
 ]
 
 const router = new VueRouter({
