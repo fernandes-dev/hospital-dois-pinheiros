@@ -1,6 +1,6 @@
 <template>
-  <v-row justify="center">
-    <v-col cols="12" sm="10" md="8">
+  <v-row justify="center" class="mx-auto">
+    <v-col cols="12" sm="10" md="9">
       <v-row justify="start" class="col-12">
         <div class="title-guide">{{title}}</div>
       </v-row>
@@ -10,7 +10,7 @@
         <v-col>
           <div class="text-guide" v-html="text"></div>
         </v-col>
-        <v-col class="col-dropdown" cols="12" sm="7">
+        <v-col class="col-dropdown" cols="12" sm="6">
           <v-row>
             <v-col cols="12" sm="12" class="col-dics">
               <v-expansion-panels accordion focusable>

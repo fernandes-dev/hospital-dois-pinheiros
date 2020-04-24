@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-card elevation="0" width="100%" class="d-flex justify-center">
-      <v-container class="container-history col-12 col-sm-8">
+      <v-container class="container-history col-12 col-sm-9">
         <v-row class="col-12" justify="start">
           <v-col cols="auto">
             <div class="title-history">{{title}}</div>
@@ -70,6 +70,7 @@ export default {
 
 .text-history {
   margin-top: 15px;
+  padding: 25px;
 }
 
 .text-history::-webkit-scrollbar-track {

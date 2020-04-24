@@ -1,5 +1,5 @@
 <template>
-  <v-container class="col-12 col-sm-8 bg-maternity">
+  <v-container class="col-12 col-sm-9 bg-maternity">
     <div class="maternity d-flex justify-center">
       <img src="/img/maternity.png" width="300px" />
     </div>

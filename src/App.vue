@@ -92,13 +92,15 @@ h6 {
 .v-expansion-panels .fas.fa-chevron-down {
   font-size: 18px !important;
 }
+
 .simple-slide .v-slide-group__content {
   display: grid;
   grid-auto-flow: column;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc(100vw - 125px);
+  grid-auto-columns: calc(100vw - 128px);
 }
+
 @media screen and (min-width: 600.001px) and (max-width: 960px) {
   .simple-slide .v-slide-group__content {
     grid-auto-columns: calc((100vw - 125px) / 2);
@@ -111,7 +113,7 @@ h6 {
 }
 @media screen and (min-width: 1264.001px) {
   .simple-slide .v-slide-group__content {
-    grid-auto-columns: calc((1185px - 130px) / 4);
+    grid-auto-columns: calc((1185px - 130px) / 3);
   }
 }
 </style>

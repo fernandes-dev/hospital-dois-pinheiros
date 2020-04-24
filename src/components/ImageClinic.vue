@@ -1,5 +1,5 @@
 <template>
-  <v-container class="content-imgclinic col-12 col-sm-8 bg-imgclinic">
+  <v-container class="content-imgclinic col-12 col-sm-9 bg-imgclinic">
     <div class="imageclinic d-flex justify-center">
       <img src="/img/logo-diagn-img.png" width="300px" />
     </div>

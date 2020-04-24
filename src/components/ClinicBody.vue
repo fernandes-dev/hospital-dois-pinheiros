@@ -1,21 +1,20 @@
 <template>
-  <v-sheet class="mx-auto col-sm-9 col-12" elevation="0">
+  <v-sheet class="bg-press-room d-flex align-center flex-column">
     <div class="center-especiality">
-      <v-row v-if="title" class="d-flex justify-start ml-12 pl-5">{{title}}</v-row>
+      <v-row v-if="title">{{title}}</v-row>
       <v-row v-else class="d-flex justify-start ml-12 pl-5">
         <span class="mr-2">Centro de Especialidades |</span>
         <strong>Corpo Clínico</strong>
       </v-row>
     </div>
-
-    <v-slide-group class center-active show-arrows>
+    <v-slide-group class="simple-slide container" show-arrows>
       <v-slide-item
-        class="hover-card"
+        class="hover-card mx-2"
         v-for="(item, i) in items"
         :key="i"
         v-slot:default="{active, toggle}"
       >
-        <v-card elevation="0" class="card-doctor" @click="toggle">
+        <v-card max-height="390px" class="card-doctor" @click="toggle">
           <!-- HOVER -->
           <v-hover v-slot:default="{ hover }">
             <v-img height="250" :src="item.img">
@@ -38,7 +37,6 @@
             </v-img>
           </v-hover>
           <!-- HOVER -->
-
           <div class="col-12 name-doctor">{{item.name}}</div>
           <div class="col-12 title-doctor">{{item.title}}</div>
           <div class="col-12 descrip-doctor">{{item.description}}</div>
@@ -93,33 +91,6 @@ export default {
   width: 100%;
 }
 
-.card-doctor {
-  width: 265px;
-  margin: 20px;
-  height: 100%;
-}
-
-@media (max-width: 425) {
-  .card-doctor {
-    width: 241px;
-    margin: 0 0 0 7px;
-  }
-}
-
-@media (max-width: 375px) {
-  .card-doctor {
-    width: 240px;
-    margin: 0 0 0 7px;
-  }
-}
-
-@media (max-width: 320px) {
-  .card-doctor {
-    width: 180px;
-    margin: 0 0 0 10px;
-  }
-}
-
 .name-doctor {
   font-size: 1.2em;
   font-weight: bold;
@@ -152,5 +123,10 @@ export default {
   padding: 4px !important;
   font-weight: bold;
   font-size: 0.9em;
+}
+
+.card-doctor {
+  width: calc(100% - 16px);
+  height: 100%;
 }
 </style>

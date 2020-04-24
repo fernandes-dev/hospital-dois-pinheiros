@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" class="pt-5 pb-10">
-    <v-col cols="12" sm="10" md="8">
+    <v-col cols="12" sm="10" md="9">
       <v-row class="col-12 title-card" justify="start">
         <div class="title-structure">{{title}}</div>
       </v-row>

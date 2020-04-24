@@ -27,13 +27,13 @@
       <Maternity />
     </div>
     <div class="clinic-body">
-      <ClinicBody />
+      <ClinicBody class="container" />
     </div>
     <div class="mural">
       <Mural />
     </div>
     <div class="press-room-home">
-      <PressRoom />
+      <PressRoom class="container" />
     </div>
     <div class="imageclinic-home">
       <ImageClinic />

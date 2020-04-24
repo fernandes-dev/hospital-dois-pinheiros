@@ -6,7 +6,7 @@
     <div class="who-we-are">
       <v-row>
         <v-card elevation="0" width="100%" class="d-flex justify-center card-who">
-          <v-container class="container-about col-12 col-sm-8">
+          <div class="container-about col-12 col-sm-9">
             <v-row class="col-12" justify="start">
               <v-col cols="auto">
                 <div class="title-about">{{title}}</div>
@@ -26,7 +26,7 @@
                 </v-img>
               </v-col>
             </v-row>
-          </v-container>
+          </div>
         </v-card>
       </v-row>
     </div>
@@ -41,7 +41,7 @@
     </div>
     <div class="waste">
       <v-row justify="center">
-        <v-card class="col-12 col-sm-8 mb-10">
+        <v-card class="col-12 col-sm-9 mb-10">
           <v-col>
             <v-row justify="center" class="d-flex justify-center">
               <div class="title-waste">{{titleWaste}}</div>
