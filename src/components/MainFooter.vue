@@ -13,7 +13,9 @@
       </div>
       <v-row class="col-lg-8 col-xl-8">
         <v-col class="col-12 col-sm-6 col-md-3" v-for="link in links" :key="link.name">
-          <div class="title-footer">{{ link.title }}</div>
+          <div class="title-footer">
+            <span class="title-footer-child">{{ link.title }}</span>
+          </div>
           <v-row v-for="item in link.items" :key="item.name">
             <router-link class="items" :to="item.url">
               <span v-if="item.icon">
@@ -88,10 +90,15 @@ export default {
 .title-footer {
   margin-right: 5%;
   margin-bottom: 20px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid grey;
   font-size: 16px;
   font-weight: bold;
   color: white;
+}
+
+.title-footer-child {
+  border-bottom: solid 2px white;
+  padding-bottom: 2px;
 }
 
 .items {

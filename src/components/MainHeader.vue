@@ -1,9 +1,9 @@
 <template>
   <v-card class="overflow-hidden">
-    <v-app-bar fixed :prominent="$vuetify.breakpoint.mdAndUp" height="100px" color="white">
-      <v-toolbar-title class="col-10 col-sm-10 col-md-4 d-flex justify-center">
-        <router-link class="h-100 mx-auto mx-md-0 white--text" to="/">
-          <img class="logo" :src="logo" width="150px" />
+    <v-app-bar class="menu-bar" fixed height="80px" color="white">
+      <v-toolbar-title class="col-10 col-sm-10 col-md-2 col-lg-4">
+        <router-link class="mx-auto mx-md-0 logo-content" to="/">
+          <img class="logo" :src="logo" width="200px" />
         </router-link>
       </v-toolbar-title>
       <div v-if="!$vuetify.breakpoint.smAndDown" class="d-flex justify-center">
@@ -12,7 +12,6 @@
             class="button-menu"
             active-class="active"
             v-if="!item.img"
-            small
             elevation="0"
             :to="item.path"
           >{{item.name}}</v-btn>
@@ -68,24 +67,36 @@ export default {
 </script>
 
 <style>
+.button-menu {
+  margin-right: 10px;
+  margin-top: 25px;
+  margin-left: 7px;
+  background-color: transparent !important;
+  text-transform: none !important;
+  font-size: 0.8em !important;
+}
 .active {
   color: white !important;
   background-color: #217b43 !important;
 }
 
-.button-menu {
-  margin-right: 10px;
-  margin-top: 35px;
-  padding: 5px !important;
-  text-transform: none !important;
-}
-
 .icon-40 {
   margin-left: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .overflow-hidden {
-  padding-bottom: 100px;
+  padding-bottom: 80px;
+}
+
+.logo {
+  padding: 30px;
+}
+
+@media (min-width: 770px) {
+  .logo-content {
+    display: flex;
+    justify-content: center;
+  }
 }
 </style>
