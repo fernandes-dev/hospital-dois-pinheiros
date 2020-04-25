@@ -16,7 +16,7 @@
           <v-card-text v-html="item.description" class="tab-content"></v-card-text>
         </v-row>
         <v-row justify="start" class="ma-2">
-          <v-btn class="button-tab" small color="#217b43">Leia mais</v-btn>
+          <v-btn :to="item.url" class="button-tab" small color="#217b43">Leia mais</v-btn>
         </v-row>
       </v-card>
     </v-col>

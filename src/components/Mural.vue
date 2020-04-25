@@ -14,7 +14,7 @@
             <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
           </v-row>
         </template>
-        <v-hover v-if="item.url.length >2 " v-slot:default="{ hover }">
+        <v-hover v-if="item.url.length > 2 " v-slot:default="{ hover }">
           <v-img :src="item.img">
             <v-expand-transition>
               <div
@@ -22,38 +22,57 @@
                 class="d-flex green v-card--reveal white--text"
                 style="height: 100%;"
               >
-                <v-btn icon dark class="mb-10 btn-eye" small :to="item.url">
-                  <v-icon color="white" size="40px">mdi-eye</v-icon>
+                <v-btn icon v-if="item.modal" @click="changeView(item.id)">
+                  <v-icon color="white" x-large>mdi-eye</v-icon>
+                </v-btn>
+                <v-btn icon :to="item.url" v-else>
+                  <v-icon color="white" x-large>mdi-eye</v-icon>
                 </v-btn>
               </div>
             </v-expand-transition>
           </v-img>
         </v-hover>
       </v-img>
+      <ModalPage :idModal="idModal" @changeViewed="changeView" :viewed="viewedOrigin" />
     </v-row>
   </div>
 </template>
 
 <script>
+
+import ModalPage from '@/components/ModalPage'
+
 export default {
+  components: {
+    ModalPage
+  },
   data() {
     return {
+      viewedOrigin: false,
+      idModal: 0,
       items: [
-        { img: '/img/mural/1.png', url: '#' },
-        { img: '/img/mural/2.png', url: '###' },
-        { img: '/img/mural/3.png', url: '#' },
-        { img: '/img/mural/4.png', url: '###' },
-        { img: '/img/mural/5.png', url: '#' },
-        { img: '/img/mural/6.png', url: '###' },
-        { img: '/img/mural/7.png', url: '#' },
-        { img: '/img/mural/8.png', url: '###' },
-        { img: '/img/mural/9.png', url: '#' },
-        { img: '/img/mural/10.png', url: '###' },
-        { img: '/img/mural/11.png', url: '#' },
-        { img: '/img/mural/12.png', url: '###' },
-        { img: '/img/mural/13.png', url: '#' },
-        { img: '/img/mural/14.png', url: '###' },
+        { id: 1, img: '/img/mural/1.png', url: '#' },
+        { id: 2, img: '/img/mural/2.png', url: '/diagnostico-imagem' },//diagnóstico por imagem
+        { id: 3, img: '/img/mural/3.png', url: '#' },
+        { id: 4, img: '/img/mural/4.png', url: '######', modal: true }, //instituto de olhos
+        { id: 5, img: '/img/mural/5.png', url: '#' },
+        { id: 6, img: '/img/mural/6.png', url: '/endoscopia' },//endoscopia
+        { id: 7, img: '/img/mural/7.png', url: '#' },
+        { id: 8, img: '/img/mural/8.png', url: '/maternidade/dia-do-bebe' }, //maternidade
+        { id: 9, img: '/img/mural/9.png', url: '#' },
+        { id: 10, img: '/img/mural/10.png', url: '/vacinas' }, //vacinas
+        { id: 11, img: '/img/mural/11.png', url: '#' },
+        { id: 12, img: '/img/mural/12.png', url: '######', modal: true }, // banco de sangue
+        { id: 13, img: '/img/mural/13.png', url: '#' },
+        { id: 14, img: '/img/mural/14.png', url: '######', modal: true }, // medicina nuclear
       ]
+    }
+  },
+  methods: {
+    changeView(id) {
+      if (typeof id == "number")
+        this.idModal = id
+      this.viewedOrigin = !this.viewedOrigin;
     }
   }
 }

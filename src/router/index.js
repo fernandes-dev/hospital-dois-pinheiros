@@ -9,6 +9,9 @@ import Social from '../views/Social.vue'
 import About from '../views/About.vue'
 import Articles from '../views/Articles.vue'
 import Article from '../views/Article.vue'
+import Page from '../views/Page.vue'
+import Profile from '../views/Profile.vue'
+import Maternity from '../views/MainMaternity.vue'
 
 const base_name = 'Hospital Dois Pinheiros'
 
@@ -52,13 +55,67 @@ const routes = [
   },
   {
     path: '/artigos',
-    name: 'Artigo - '+ base_name,
+    name: 'Artigos - '+ base_name,
     component: Articles
   },
   {
     path: '/artigos/:id',
     name: 'Artigo - '+ base_name,
     component: Article
+  },
+  {
+    path: '/page/:name',
+    name: 'Page - '+ base_name,
+    component: Page
+  },
+  {
+    path: '/perfil/:id',
+    name: 'Perfil - '+ base_name,
+    component: Profile
+  },
+  {
+    path: '/maternidade/:page',
+    name: 'Maternidade - '+ base_name,
+    component: Maternity,
+    redirect: { path: "/dia-do-bebe" },
+    children: [
+      {
+        path: "/maternidade/dia-do-bebe",
+        name:'Dia do bebê - '+ base_name,
+        component: () => import("../components/DayChild.vue")
+      },
+      {
+        path: "/maternidade/calendario",
+        name: 'Calendário - '+ base_name,
+        component: () => import("../components/Calendars.vue")
+      },
+      {
+        path: "/maternidade/internacao",
+        name: 'Internação - '+ base_name,
+        component: () => import("../components/Internation.vue")
+      },
+      {
+        path: "/maternidade/tabela-de-crescimento",
+        name: 'Tabela de Crescimento - '+ base_name,
+        component: () => import("../components/TableChart.vue")
+      },
+      {
+        path: "/maternidade/tabela-de-tanner",
+        name: 'Tabela de Tanner - '+ base_name,
+        component: () => import("../components/TableTanner.vue")
+      },
+      {
+        path: "/maternidade/dicas",
+        name: 'Dicas - '+ base_name,
+        component: () => import("../components/Tips.vue")
+      }
+      ,
+      {
+        path: "/maternidade/curso-de-gestante",
+        name: 'Curso de Gestante - '+ base_name,
+        component: () => import("../components/Course.vue")
+      }
+    ]
   },
 ]
 

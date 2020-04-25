@@ -2,11 +2,17 @@
   <v-card class="card-doctor" @click="toggle">
     <v-hover v-slot:default="{ hover }">
       <v-img v-if="doctor.image" :src="doctor.image">
-        <v-expand-transition>
+        <v-expand-transition v-if="doctor.facebook || doctor.twitter || doctor.linkedin">
           <div v-if="hover" class="d-flex green v-card--reveal white--text" style="height: 100%;">
-            <v-icon class="social-web" size="40px">mdi-facebook</v-icon>
-            <v-icon class="social-web" size="40px">mdi-twitter</v-icon>
-            <v-icon class="social-web" size="40px">mdi-linkedin</v-icon>
+            <v-btn v-if="doctor.facebook" icon class="ma-2" target="blank" :href="doctor.facebook">
+              <v-icon class="social-web" size="40px">mdi-facebook</v-icon>
+            </v-btn>
+            <v-btn v-if="doctor.twitter" icon class="ma-2" target="blank" :href="doctor.twitter">
+              <v-icon class="social-web" size="40px">mdi-twitter</v-icon>
+            </v-btn>
+            <v-btn v-if="doctor.linkedin" icon class="ma-2" target="blank" :href="doctor.linkedin">
+              <v-icon class="social-web" size="40px">mdi-linkedin</v-icon>
+            </v-btn>
           </div>
         </v-expand-transition>
       </v-img>
@@ -15,7 +21,7 @@
     <v-card-subtitle class="title-doctor" v-if="doctor.title" v-html="doctor.title"></v-card-subtitle>
     <v-card-text class="descrip-doctor" v-if="doctor.description" v-html="doctor.description"></v-card-text>
     <v-card-actions class="d-flex justify-end pb-0">
-      <v-btn class="view-profile" elevation="0" small>Ver perfil</v-btn>
+      <v-btn class="view-profile" elevation="0" small :to="'perfil/'+doctor.id">Ver perfil</v-btn>
     </v-card-actions>
   </v-card>
 </template>
