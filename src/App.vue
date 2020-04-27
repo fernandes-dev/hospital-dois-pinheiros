@@ -38,17 +38,17 @@ html {
   font-size: 16px;
 }
 main {
-  font-size: 0.875rem;
+  font-size: 0.875rrem;
   letter-spacing: 0.25px;
 }
 h1 {
-  font-size: 3rem;
+  font-size: 3rrem;
   font-weight: normal;
   letter-spacing: 0px;
 }
 h2 {
   font-family: AdgetSans;
-  font-size: 2.125rem;
+  font-size: 2.125rrem;
   font-weight: normal;
   letter-spacing: 0.25px;
   text-align: center;
@@ -57,7 +57,7 @@ h2 {
 }
 h3 {
   font-family: AdgetSans, Roboto, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.5rrem;
   font-weight: normal;
   letter-spacing: 0px;
   margin-bottom: 12px;
@@ -67,20 +67,19 @@ h3::after {
   display: block;
   height: 2px;
   width: 80px;
-  background: var(--v-primary-base);
 }
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.25rrem;
   font-weight: medium;
   letter-spacing: 0.15px;
 }
 h5 {
-  font-size: 1rem;
+  font-size: 1rrem;
   font-weight: normal;
   letter-spacing: 0.15px;
 }
 h6 {
-  font-size: 0.875rem;
+  font-size: 0.875rrem;
   font-weight: medium;
   letter-spacing: 0.1px;
 }
