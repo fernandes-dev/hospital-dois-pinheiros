@@ -2,9 +2,9 @@
   <div>
     <v-dialog v-model="viewed">
       <v-card>
-        <v-card-title>{{idModal}}</v-card-title>
-        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
-
+        <v-card-title>{{title}}</v-card-title>
+        <v-img :src="img"></v-img>
+        <v-card-text v-html="text"></v-card-text>
         <v-card-actions>
           <v-btn dark @click="changeViewed">Fechar</v-btn>
         </v-card-actions>
@@ -19,6 +19,9 @@ export default {
     viewedOrigin: true
   }),
   props: {
+    img: String,
+    title: String,
+    text: String,
     viewed: Boolean,
     color: String,
     idModal: Number
