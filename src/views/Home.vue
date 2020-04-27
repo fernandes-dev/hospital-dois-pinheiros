@@ -43,11 +43,11 @@
 
 <script>
 import Carousel from '@/components/Carousel'
-import Maternity from '@/components/Maternity'
+import Maternity from '@/components/maternity/Maternity'
 import ClinicBody from '@/components/ClinicBody'
-import ImageClinic from '@/components/ImageClinic'
+import ImageClinic from '@/components/clinicimage/ImageClinic'
 import Mural from '@/components/Mural'
-import PressRoom from '@/components/PressRoom'
+import PressRoom from '@/components/press/PressRoom'
 
 export default {
   components: {
@@ -98,11 +98,11 @@ export default {
 
 .content-topic {
   padding: 0px;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 .title-topic {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
