@@ -15,7 +15,6 @@
                 active-class="active"
                 class="button-menu"
                 small
-                :to="item.path"
                 v-on="on"
               >{{item.name}}</v-btn>
             </template>
@@ -35,31 +34,40 @@
             class="button-menu"
             active-class="active"
           >{{item.name}}</v-btn>
-          <img class="icon-40" v-if="item.img" :src="icone" width="50px" />
+          <v-btn class="icon-40" icon v-if="item.img" :href="item.path">
+            <img :src="icone" width="50px" />
+          </v-btn>
         </div>
       </div>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" fixed temporary>
-      <v-subheader>MENU</v-subheader>
-      <v-list-item-group v-model="current">
-        <v-list-item v-for="(route, i) in menu" :key="i">
-          <v-list-item-title v-if="!route.childs">
+      <v-subheader class="mb-6">
+        <div class="col-6 d-flex justify-start">MENU</div>
+        <div class="mt-2 ml-2" v-for="(item, i) in menu" :key="i">
+          <v-btn class="icon-40" icon v-if="item.img" :href="item.path">
+            <img :src="icone" width="40px" />
+          </v-btn>
+        </div>
+      </v-subheader>
+
+      <v-list-item-group v-for="(route, i) in menu" :key="i" v-model="current">
+        <v-list-item v-if="!route.childs">
+          <v-list-item-title>
             <router-link class="link-menu-app" :to="route.path">{{ route.name }}</router-link>
           </v-list-item-title>
-          <v-list-group v-else>
-            <template v-slot:activator>
-              <v-list-item-content>
-                <v-list-item-title>{{route.name}}</v-list-item-title>
-              </v-list-item-content>
-            </template>
-
-            <v-list-item class="pa-0" v-for="(admin, i) in route.childs" :key="i" :to="admin.path">
-              <v-list-item-title class="pl-5">{{admin.name}}</v-list-item-title>
-            </v-list-item>
-          </v-list-group>
         </v-list-item>
+        <v-list-group v-else>
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title>{{route.name}}</v-list-item-title>
+            </v-list-item-content>
+          </template>
+          <v-list-item class="ml-4" v-for="(admin, i) in route.childs" :key="i" :to="admin.path">
+            <v-list-item-title>{{admin.name}}</v-list-item-title>
+          </v-list-item>
+        </v-list-group>
       </v-list-item-group>
     </v-navigation-drawer>
   </v-card>
@@ -76,9 +84,15 @@ export default {
       menu: [
         { path: '/', name: 'Início', },
         { path: '/sobre', name: 'Sobre nós' },
-        { path: '/imprensa', name: 'Imprensa' },
         {
-          path: '/social',
+          name: 'Imprensa',
+          childs: [
+            { path: '/releases', name: 'Releases' },
+            { path: '/videos', name: 'Videos' },
+            { path: '/fotos-e-eventos', name: 'Fotos e Eventos' },
+          ]
+        },
+        {
           name: 'Social',
           childs: [
             { path: '/olho-no-futuro', name: 'De olho no Futuro' },
@@ -89,16 +103,15 @@ export default {
           ]
         },
         {
-          path: '/projetos',
           name: 'Projetos',
           childs: [
             { path: '/espaco-cultural', name: 'Espaço Cultural' },
-            { path: '/botica', name: 'Botica Cultural' },
+            { path: '/botica-cultural', name: 'Botica Cultural' },
             { path: '/jornada-da-amamentacao', name: 'Jornada da Amamentação' },
             { path: '/teste-do-olhinho', name: 'Teste do Olhinho' },
-            { path: '/nasci-no-2p', name: 'Nasci no Dois Pinheiros' },
-            { path: '/dia-do-bebe', name: 'Dia do Bebê' },
-            { path: '/curso-de-gestante', name: 'Curse de Gestante' },
+            { path: '/imprensa/videos-nasci-no-h2p', name: 'Nasci no Dois Pinheiros' },
+            { path: '/maternidade/dia-do-bebe', name: 'Dia do Bebê' },
+            { path: '/maternidade/curso-de-gestante', name: 'Curso de Gestante' },
           ]
         },
         {
@@ -106,7 +119,6 @@ export default {
           name: 'Atendimento',
         },
         {
-          path: '/servicos',
           name: 'Serviços',
           childs: [
             { path: '/internacoes', name: 'Internações' },
@@ -115,7 +127,7 @@ export default {
             { path: '/emergencia', name: 'Emergência' }
           ]
         },
-        { path: '/', img: true },
+        { path: 'http://40anos.hospitaldoispinheiros.com.br/', img: true },
       ],
     }
   },
