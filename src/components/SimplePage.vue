@@ -1,17 +1,16 @@
 <template>
-  <div id="simple-page">
-    <v-container class="col-sm-10 py-5 my-5">
-      <span class="display-1 text-uppercase title-item">
+  <v-content class="col-sm-10 py-5 my-5">
+    <div class="title-simple-page">
+      <h3 class="pb-8">
         <b>{{title}}</b>
-      </span>
-      <div class="title text-justify my-5" v-html="text"></div>
-
-      <div v-for="item in items" :key="item.id" class="my-5">
-        <h3>{{item.title}}</h3>
-        <v-img :src="item.img"></v-img>
-      </div>
-    </v-container>
-  </div>
+      </h3>
+    </div>
+    <div class="text-justify py-6" v-html="text"></div>
+    <div v-for="(item, i) in items" :key="i" class="my-5">
+      <h4 class="py-5">{{item.title}}</h4>
+      <v-img :src="item.img"></v-img>
+    </div>
+  </v-content>
 </template>
 
 <script>
@@ -34,5 +33,13 @@ export default {
   font-weight: bold;
   width: 30px;
   border-bottom: solid 2px black;
+}
+
+h3::after {
+  background-color: green;
+}
+
+.title-simple-page {
+  border-bottom: 1px solid grey;
 }
 </style>

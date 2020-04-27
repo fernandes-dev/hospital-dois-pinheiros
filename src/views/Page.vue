@@ -1,7 +1,7 @@
 <template>
-  <div id="social-pages">
+  <v-container id="social-pages">
     <SimplePage :text="text" :title="title" :items="items" />
-  </div>
+  </v-container>
 </template>
 
 <script>
