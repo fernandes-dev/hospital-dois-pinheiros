@@ -58,14 +58,14 @@ export default {
 }
 
 .name-doctor {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #217b43;
   padding: 5px 10px;
 }
 
 .title-doctor {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-weight: bold;
   padding: 0 10px;
   margin-top: -4px;
@@ -73,7 +73,7 @@ export default {
 }
 
 .descrip-doctor {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   padding: 0 10px;
   margin-top: 12px;
 }
@@ -82,7 +82,7 @@ export default {
   text-transform: none !important;
   padding: 4px !important;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   background-color: transparent !important;
 }
 

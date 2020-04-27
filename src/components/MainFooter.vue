@@ -42,32 +42,32 @@ export default {
       links: [
         {
           items: [
-            { name: 'DE OLHO NO FUTURO', url: '#' },
-            { name: 'EXPEDIÇÃO XINGU', url: '#' },
-            { name: 'PASSOS QUE SALVAM (AVIP)', url: '#' },
-            { name: 'OLHAR NO PRÓXIMO', url: '#' },
-            { name: 'HOSPITAL DO AMOR (AVIP)', url: '#' },
+            { name: 'DE OLHO NO FUTURO', url: '/social/de-olho-no-futuro' },
+            { name: 'EXPEDIÇÃO XINGU', url: '/social/expedicao-xingu' },
+            { name: 'PASSOS QUE SALVAM (AVIP)', url: '/social-passos-que-salvam' },
+            { name: 'OLHAR NO PRÓXIMO', url: '/social/olhar-no-proximo' },
+            { name: 'HOSPITAL DO AMOR (AVIP)', url: '/social/hospital-do-amor' },
           ],
           title: 'SOCIAL',
         },
         {
           items: [
-            { name: 'ESPAÇO CULTURAL', url: '#' },
-            { name: 'BOTICA CULTURAL', url: '#' },
-            { name: 'JORNADA DA AMAMENTAÇÃO', url: '#' },
-            { name: 'TESTE DO OLHINHO', url: '#' },
-            { name: 'NASCI NO DOIS PINHEIROS', url: '#' },
-            { name: 'DIA DO BEBÊ', url: '#' },
-            { name: 'CURSO DE GESTANTE', url: '#' },
+            { name: 'ESPAÇO CULTURAL', url: '/espaco-cultural' },
+            { name: 'BOTICA CULTURAL', url: '/botica-cultural' },
+            { name: 'JORNADA DA AMAMENTAÇÃO', url: '/eventos/jornada-da-amamentacao' },
+            { name: 'TESTE DO OLHINHO', url: '/teste-do-olhinho' },
+            { name: 'NASCI NO DOIS PINHEIROS', url: '/imprensa/videos-nasci-no-h2p' },
+            { name: 'DIA DO BEBÊ', url: '/maternidade/dia-do-bebe' },
+            { name: 'CURSO DE GESTANTE', url: '/maternidade/curso-de-gestante' },
           ],
           title: 'PROJETOS',
         },
         {
           items: [
-            { name: 'INTERNAÇÕES', url: '#' },
-            { name: 'CENTRO CIRÚRGICO', url: '#' },
-            { name: 'CENTRO DE ESPECIALIDADES', url: '#' },
-            { name: 'EMERGÊNCIA', url: '#' },
+            { name: 'INTERNAÇÕES', url: '/internacoes' },
+            { name: 'CENTRO CIRÚRGICO', url: '/centro-cirurgico' },
+            { name: 'CENTRO DE ESPECIALIDADES', url: '/centro-de-especialidades' },
+            { name: 'EMERGÊNCIA', url: '/emergencia' },
           ],
           title: 'SERVICOS',
         },
@@ -112,11 +112,11 @@ export default {
 .emergency {
   color: white;
   font-weight: bolder;
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 .phone {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: bold;
   color: white;
 }
@@ -131,7 +131,7 @@ export default {
 .copy-text {
   padding: 10px;
   margin: 10px;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   color: white;
 }
 

@@ -61,7 +61,7 @@ export default {
 }
 
 .title-structure {
-  font-size: 1.9em;
+  font-size: 1.9rem;
   padding: 20px;
 }
 

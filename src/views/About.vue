@@ -181,21 +181,21 @@ export default {
   margin-bottom: 80px;
 }
 .title-waste {
-  font-size: 1.9em;
+  font-size: 1.9rem;
   padding-bottom: 5px;
 }
 
 .text-waste {
-  font-size: 1.1em;
+  font-size: 1.1rem;
 }
 
 .title-about {
-  font-size: 1.7em;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 
 .subtitle-about {
-  font-size: 1.7em;
+  font-size: 1.7rem;
 }
 
 .container-about {

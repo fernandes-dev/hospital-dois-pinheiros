@@ -53,7 +53,7 @@ export default {
 
 <style scoped>
 .center-especiality {
-  font-size: 1.9em;
+  font-size: 1.9rem;
   margin-bottom: 20px;
   margin-top: 40px;
   padding: 0 80px;

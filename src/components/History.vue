@@ -59,12 +59,12 @@ export default {
 
 <style scoped>
 .title-history {
-  font-size: 1.7em;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 
 .subtitle-history {
-  font-size: 1.7em;
+  font-size: 1.7rem;
 }
 
 .container-history {

@@ -59,7 +59,7 @@ export default {
 }
 
 .title-dics {
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: bold;
   padding: 20px;
 }
@@ -69,13 +69,13 @@ export default {
 }
 
 .text-guide {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   padding: 15px;
   padding-bottom: 0px;
 }
 
 .title-guide {
-  font-size: 1.9em;
+  font-size: 1.9rem;
   padding: 20px;
 }
 
