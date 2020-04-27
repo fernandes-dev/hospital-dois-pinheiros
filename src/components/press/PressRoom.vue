@@ -63,24 +63,24 @@ export default {
 }
 
 .name-press {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: black;
   padding: 8px 0 0 4px !important;
 }
 
 .title-press {
-  font-size: 1.3em;
+  font-size: 1.3rem;
   font-weight: bold;
   padding-top: 35px;
   padding-bottom: 0;
 }
 
 .descrip-press {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .press-room {
-  font-size: 1.9em;
+  font-size: 1.9rem;
   margin-bottom: 40px;
   padding-top: 80px;
 }
@@ -96,6 +96,10 @@ export default {
 }
 
 .row-press-items {
-  font-size: 0.9em;
+  font-size: 0.9rem;
+}
+
+.icon-press {
+  border: 7px solid white !important;
 }
 </style>
