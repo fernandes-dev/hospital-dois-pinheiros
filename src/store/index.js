@@ -4,7 +4,7 @@ import RPC from './rpc'
 
 Vue.use(Vuex)
 
-const base_url = 'http://localhost:8080'
+const base_url = 'http://server/'
 
 RPC.base(base_url)
 RPC.procedure('getAllArticles', 'articles')

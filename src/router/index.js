@@ -1,17 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Press from '../views/Press.vue'
-import Projects from '../views/Projects.vue'
 import Attendance from '../views/Attendance.vue'
 import Services from '../views/Services.vue'
-import Social from '../views/Social.vue'
 import About from '../views/About.vue'
 import Articles from '../views/Articles.vue'
 import Article from '../views/Article.vue'
 import Page from '../views/Page.vue'
 import Profile from '../views/Profile.vue'
 import Maternity from '../views/MainMaternity.vue'
+import ClinicImagem from '../views/MainClinic.vue'
 
 const base_name = 'Hospital Dois Pinheiros'
 
@@ -27,21 +25,6 @@ const routes = [
     path: '/sobre',
     name: 'Sobre nós - '+base_name,
     component: About
-  },
-  {
-    path: '/imprensa',
-    name: 'Imprensa - '+ base_name,
-    component: Press
-  },
-  {
-    path: '/social',
-    name: 'Social - '+ base_name,
-    component: Social
-  },
-  {
-    path: '/projetos/',
-    name: 'Projetos - '+ base_name,
-    component: Projects
   },
   {
     path: '/atendimento',
@@ -82,39 +65,62 @@ const routes = [
       {
         path: "/maternidade/dia-do-bebe",
         name:'Dia do bebê - '+ base_name,
-        component: () => import("../components/DayChild.vue")
+        component: () => import("@/components/maternity/DayChild.vue")
       },
       {
         path: "/maternidade/calendario",
         name: 'Calendário - '+ base_name,
-        component: () => import("../components/Calendars.vue")
+        component: () => import("@/components/maternity/Calendars.vue")
       },
       {
         path: "/maternidade/internacao",
         name: 'Internação - '+ base_name,
-        component: () => import("../components/Internation.vue")
+        component: () => import("@/components/maternity/Internation.vue")
       },
       {
         path: "/maternidade/tabela-de-crescimento",
         name: 'Tabela de Crescimento - '+ base_name,
-        component: () => import("../components/TableChart.vue")
+        component: () => import("@/components/maternity/TableChart.vue")
       },
       {
         path: "/maternidade/tabela-de-tanner",
         name: 'Tabela de Tanner - '+ base_name,
-        component: () => import("../components/TableTanner.vue")
+        component: () => import("@/components/maternity/TableTanner.vue")
       },
       {
         path: "/maternidade/dicas",
         name: 'Dicas - '+ base_name,
-        component: () => import("../components/Tips.vue")
+        component: () => import("@/components/maternity/Tips.vue")
       }
       ,
       {
         path: "/maternidade/curso-de-gestante",
         name: 'Curso de Gestante - '+ base_name,
-        component: () => import("../components/Course.vue")
+        component: () => import("@/components/maternity/Course.vue")
       }
+    ]
+  },
+  {
+    path: '/clinica-imagem/:page',
+    name: 'Clínica de Imagem - '+ base_name,
+    component: ClinicImagem,
+    redirect: { path: "/exames" },
+    children: [
+      {
+        path: "/clinica-imagem/exames",
+        name:'Dia do bebê - '+ base_name,
+        component: () => import("@/components/clinicimage/ExamsClinicImage.vue")
+      },
+      {
+        path: "/clinica-imagem/sobre",
+        name: 'Sobre - '+ base_name,
+        component: () => import("@/components/clinicimage/AboutClinicImage.vue")
+      },
+      {
+        path: "/clinica-imagem/noticias",
+        name: 'Notícias - '+ base_name,
+        component: () => import("@/components/clinicimage/NewsClinicImage.vue")
+      },
     ]
   },
 ]
