@@ -95,21 +95,21 @@ export default {
         {
           name: 'Social',
           childs: [
-            { path: '/olho-no-futuro', name: 'De olho no Futuro' },
-            { path: '/expedicao-xingu', name: 'Expedição Xingu' },
-            { path: '/passos-que-salvam', name: 'Passos que Salvam' },
-            { path: '/olhar-no-proximo', name: 'Olhar no Próximo' },
-            { path: '/hospital-do-amor', name: 'Hospital do Amor' },
+            { path: '/releases/olho-no-futuro', name: 'De olho no Futuro' },
+            { path: '/page/expedicao-xingu', name: 'Expedição Xingu' },
+            { path: '/page/passos-que-salvam', name: 'Passos que Salvam' },
+            { path: '/releases/olhar-no-proximo', name: 'Olhar no Próximo' },
+            { path: '/page/hospital-do-amor', name: 'Hospital do Amor' },
           ]
         },
         {
           name: 'Projetos',
           childs: [
-            { path: '/espaco-cultural', name: 'Espaço Cultural' },
-            { path: '/botica-cultural', name: 'Botica Cultural' },
-            { path: '/jornada-da-amamentacao', name: 'Jornada da Amamentação' },
-            { path: '/teste-do-olhinho', name: 'Teste do Olhinho' },
-            { path: '/imprensa/videos-nasci-no-h2p', name: 'Nasci no Dois Pinheiros' },
+            { path: '/page/espaco-cultural', name: 'Espaço Cultural' },
+            { path: '/page/botica-cultural', name: 'Botica Cultural' },
+            { path: '/fotos-e-eventos/jornada-da-amamentacao', name: 'Jornada da Amamentação' },
+            { path: '/page/teste-do-olhinho', name: 'Teste do Olhinho' },
+            { path: '/nasci-no-h2p', name: 'Nasci no Dois Pinheiros' },
             { path: '/maternidade/dia-do-bebe', name: 'Dia do Bebê' },
             { path: '/maternidade/curso-de-gestante', name: 'Curso de Gestante' },
           ]
@@ -121,10 +121,10 @@ export default {
         {
           name: 'Serviços',
           childs: [
-            { path: '/internacoes', name: 'Internações' },
-            { path: '/centro-cirurgico', name: 'Centro Cirúrgico' },
-            { path: '/especialidades', name: 'Centro de Especialidades' },
-            { path: '/emergencia', name: 'Emergência' }
+            { path: '/page/internacoes', name: 'Internações' },
+            { path: '/page/centro-cirurgico', name: 'Centro Cirúrgico' },
+            { path: '/page/especialidades', name: 'Centro de Especialidades' },
+            { path: '/page/emergencia', name: 'Emergência' }
           ]
         },
         { path: 'http://40anos.hospitaldoispinheiros.com.br/', img: true },

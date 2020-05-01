@@ -42,21 +42,21 @@ export default {
       links: [
         {
           items: [
-            { name: 'DE OLHO NO FUTURO', url: '/social/de-olho-no-futuro' },
-            { name: 'EXPEDIÇÃO XINGU', url: '/social/expedicao-xingu' },
-            { name: 'PASSOS QUE SALVAM (AVIP)', url: '/social-passos-que-salvam' },
-            { name: 'OLHAR NO PRÓXIMO', url: '/social/olhar-no-proximo' },
-            { name: 'HOSPITAL DO AMOR (AVIP)', url: '/social/hospital-do-amor' },
+            { name: 'DE OLHO NO FUTURO', url: '/releases/olho-no-futuro' },
+            { name: 'EXPEDIÇÃO XINGU', url: '/page/expedicao-xingu' },
+            { name: 'PASSOS QUE SALVAM (AVIP)', url: '/page/passos-que-salvam' },
+            { name: 'OLHAR NO PRÓXIMO', url: '/releases/olhar-no-proximo' },
+            { name: 'HOSPITAL DO AMOR (AVIP)', url: '/page/hospital-do-amor' },
           ],
           title: 'SOCIAL',
         },
         {
           items: [
-            { name: 'ESPAÇO CULTURAL', url: '/espaco-cultural' },
-            { name: 'BOTICA CULTURAL', url: '/botica-cultural' },
-            { name: 'JORNADA DA AMAMENTAÇÃO', url: '/eventos/jornada-da-amamentacao' },
-            { name: 'TESTE DO OLHINHO', url: '/teste-do-olhinho' },
-            { name: 'NASCI NO DOIS PINHEIROS', url: '/imprensa/videos-nasci-no-h2p' },
+            { name: 'ESPAÇO CULTURAL', url: '/page/espaco-cultural' },
+            { name: 'BOTICA CULTURAL', url: '/page/botica-cultural' },
+            { name: 'JORNADA DA AMAMENTAÇÃO', url: '/fotos-e-eventos/jornada-da-amamentacao' },
+            { name: 'TESTE DO OLHINHO', url: '/page/teste-do-olhinho' },
+            { name: 'NASCI NO DOIS PINHEIROS', url: '/videos/nasci-no-h2p' },
             { name: 'DIA DO BEBÊ', url: '/maternidade/dia-do-bebe' },
             { name: 'CURSO DE GESTANTE', url: '/maternidade/curso-de-gestante' },
           ],
@@ -64,10 +64,10 @@ export default {
         },
         {
           items: [
-            { name: 'INTERNAÇÕES', url: '/internacoes' },
-            { name: 'CENTRO CIRÚRGICO', url: '/centro-cirurgico' },
-            { name: 'CENTRO DE ESPECIALIDADES', url: '/centro-de-especialidades' },
-            { name: 'EMERGÊNCIA', url: '/emergencia' },
+            { name: 'INTERNAÇÕES', url: '/page/internacoes' },
+            { name: 'CENTRO CIRÚRGICO', url: '/page/centro-cirurgico' },
+            { name: 'CENTRO DE ESPECIALIDADES', url: '/page/especialidades' },
+            { name: 'EMERGÊNCIA', url: '/page/emergencia' },
           ],
           title: 'SERVICOS',
         },
