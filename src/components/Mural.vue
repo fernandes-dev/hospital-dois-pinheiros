@@ -39,7 +39,7 @@ export default {
       idModal: 0,
       items: [
         { id: 1, img: '/img/mural/1.png' },
-        { id: 2, img: '/img/mural/2.png', url: '/diagnostico-imagem' },//diagnóstico por imagem
+        { id: 2, img: '/img/mural/2.png', url: '/clinica-imagem' },//diagnóstico por imagem
         { id: 3, img: '/img/mural/3.png' },
         { id: 4, img: '/img/mural/4.png', url: '######', modal: true }, //instituto de olhos
         { id: 5, img: '/img/mural/5.png' },
@@ -47,7 +47,7 @@ export default {
         { id: 7, img: '/img/mural/7.png' },
         { id: 8, img: '/img/mural/8.png', url: '/maternidade/dia-do-bebe' }, //maternidade
         { id: 9, img: '/img/mural/9.png' },
-        { id: 10, img: '/img/mural/10.png', url: '/vacinas' }, //vacinas
+        { id: 10, img: '/img/mural/10.png', url: '/sala-de-vacinas' }, //vacinas
         { id: 11, img: '/img/mural/11.png' },
         { id: 12, img: '/img/mural/12.png', url: '######', modal: true }, // banco de sangue
         { id: 13, img: '/img/mural/13.png' },
