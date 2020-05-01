@@ -1,10 +1,11 @@
 <template>
   <div>
-    <div class="logo-institutional">
+    <div v-if="logo" class="logo-institutional">
       <v-row justify="center" class="py-3">
         <v-img max-height="150px" max-width="300px" width="100%" :src="logo"></v-img>
       </v-row>
     </div>
+
     <v-tabs class="mb-8" show-arrows color="#217b43">
       <v-tab
         class="tab-name"
