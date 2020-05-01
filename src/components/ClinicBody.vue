@@ -8,7 +8,7 @@
 
     <v-slide-group class="simple-slide" show-arrows>
       <v-slide-item
-        class="hover-card mx-2"
+        class="mx-2 pb-10"
         v-for="(doctor, i) in doctors"
         :key="i"
         v-slot:default="{active, toggle}"

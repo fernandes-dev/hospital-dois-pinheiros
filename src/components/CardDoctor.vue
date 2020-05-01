@@ -1,5 +1,5 @@
 <template>
-  <v-card class="card-doctor" @click="toggle">
+  <v-card class="card-doctor" elevation="0" @click="toggle">
     <v-hover v-slot:default="{ hover }">
       <v-img v-if="doctor.image" :src="doctor.image">
         <v-expand-transition v-if="doctor.facebook || doctor.twitter || doctor.linkedin">
@@ -21,7 +21,7 @@
     <v-card-subtitle class="title-doctor" v-if="doctor.title" v-html="doctor.title"></v-card-subtitle>
     <v-card-text class="descrip-doctor" v-if="doctor.description" v-html="doctor.description"></v-card-text>
     <v-card-actions class="d-flex justify-end pb-0">
-      <v-btn class="view-profile" elevation="0" small :to="'perfil/'+doctor.id">Ver perfil</v-btn>
+      <v-btn class="view-profile" elevation="1" small :to="'perfil/'+doctor.id">Ver perfil</v-btn>
     </v-card-actions>
   </v-card>
 </template>
