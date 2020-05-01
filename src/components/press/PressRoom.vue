@@ -1,7 +1,7 @@
 <template>
   <v-sheet class="bg-press-room d-flex align-center flex-column">
     <div class="press-room">
-      <v-row>
+      <v-row justify="center">
         Sala de Imprensa
         <strong class="ml-2">Dois Pinheiros</strong>
       </v-row>
@@ -13,7 +13,7 @@
         :key="i"
         v-slot:default="{active, toggle}"
       >
-        <v-card @click="toggle">
+        <v-card @click="toggle" :to="item.path">
           <v-toolbar :src="item.img" height="220px" max-height="390px" width="100%" extended>
             <template v-slot:extension>
               <v-btn color="#217b43" class="icon-press" elevation="0" absolute bottom left fab>
@@ -38,11 +38,9 @@ export default {
       model: null,
       clockIcon: '/img/icons/clock.svg',
       items: [
-        { id: 1, title: 'Releases', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/1.png', date: '10/02/2020', icon: 'newspaper' },
-        { id: 2, title: 'Videos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/2.png', date: '10/02/2020', icon: 'video' },
-        { id: 3, title: 'Fotos e Eventos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/3.png', date: '10/02/2020', icon: 'camera' },
-        { id: 4, title: 'Fotos e Eventos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/3.png', date: '10/02/2020', icon: 'camera' },
-
+        { path: '/releases', title: 'Releases', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/1.png', date: '10/02/2020', icon: 'newspaper' },
+        { path: '/videos', title: 'Videos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/2.png', date: '10/02/2020', icon: 'video' },
+        { path: '/fotos-e-eventos', title: 'Fotos e Eventos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et...', url: '#', img: '/img/news/3.png', date: '10/02/2020', icon: 'camera' },
       ]
     }
   }
