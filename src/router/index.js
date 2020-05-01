@@ -2,14 +2,21 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Attendance from '../views/Attendance.vue'
-import Services from '../views/Services.vue'
 import About from '../views/About.vue'
-import Articles from '../views/Articles.vue'
-import Article from '../views/Article.vue'
 import Page from '../views/Page.vue'
 import Profile from '../views/Profile.vue'
 import Maternity from '../views/MainMaternity.vue'
+import Endoscopy from '../views/Endoscopy.vue'
 import ClinicImagem from '../views/MainClinic.vue'
+import VaccinationRoom from '../views/VaccinationRoom.vue'
+import ReleasesItem from '@/components/press/ReleasesItem'
+import MainReleases from '@/views/MainReleases'
+import MainVideos from '@/views/MainVideos'
+import VideosItem from '@/components/press/VideosItem'
+import Video from '@/components/press/Video'
+import MainBornInH2P from '@/views/MainBornInH2P'
+import MainPhotosEvents from '@/views/MainPhotosEvents'
+import PhotosEventsItem from '@/components/press/PhotosEventsItem'
 
 const base_name = 'Hospital Dois Pinheiros'
 
@@ -22,6 +29,24 @@ const routes = [
     component: Home
   },
   {
+    path: '/nasci-no-h2p',
+    name: 'Nasci no H2P - '+base_name,
+    component: MainBornInH2P,
+    redirect: { path: "/nasci-no-h2p/videos" },
+    children: [
+      {
+        path: "/nasci-no-h2p/videos",
+        name:'Videos - '+ base_name,
+        component: () => import("@/components/press/VideosBornInH2P.vue")
+      },
+      {
+        path: "/nasci-no-h2p/fotos",
+        name: 'Fotos - '+ base_name,
+        component: () => import("@/components/press/PhotosBornInH2P.vue")
+      },
+    ]
+  },
+  {
     path: '/sobre',
     name: 'Sobre nós - '+base_name,
     component: About
@@ -32,19 +57,39 @@ const routes = [
     component: Attendance
   },
   {
-    path: '/servicos',
-    name: 'Serviços - '+ base_name,
-    component: Services
+    path: '/releases',
+    name: 'Releases - '+ base_name,
+    component: MainReleases
   },
   {
-    path: '/artigos',
-    name: 'Artigos - '+ base_name,
-    component: Articles
+    path: '/releases/:name',
+    name: 'Release - '+ base_name,
+    component: ReleasesItem
   },
   {
-    path: '/artigos/:id',
-    name: 'Artigo - '+ base_name,
-    component: Article
+    path: '/videos',
+    name: 'Galeria de Vídeos - '+ base_name,
+    component: MainVideos
+  },
+  {
+    path: '/videos/:name',
+    name: 'Video - '+ base_name,
+    component: VideosItem
+  },
+  {
+    path: '/video/:name',
+    name: 'Video',
+    component: Video
+  },
+  {
+    path: '/fotos-e-eventos',
+    name: 'Fotos e Eventos - '+ base_name,
+    component: MainPhotosEvents,
+  },
+  {
+    path: '/fotos-e-eventos/:name',
+    name: 'Galeria - '+ base_name,
+    component: PhotosEventsItem,
   },
   {
     path: '/page/:name',
@@ -52,15 +97,25 @@ const routes = [
     component: Page
   },
   {
-    path: '/perfil/:id',
+    path: '/perfil/:name',
     name: 'Perfil - '+ base_name,
     component: Profile
   },
   {
-    path: '/maternidade/:page',
+    path: '/sala-de-vacinas/',
+    name: 'Sala de Vacinas - '+ base_name,
+    component: VaccinationRoom,
+  },
+  {
+    path: '/endoscopia/',
+    name: 'Endoscopia - '+ base_name,
+    component: Endoscopy
+  },
+  {
+    path: '/maternidade/',
     name: 'Maternidade - '+ base_name,
     component: Maternity,
-    redirect: { path: "/dia-do-bebe" },
+    redirect: { path: "/maternidade/dia-do-bebe" },
     children: [
       {
         path: "/maternidade/dia-do-bebe",
@@ -101,14 +156,14 @@ const routes = [
     ]
   },
   {
-    path: '/clinica-imagem/:page',
+    path: '/clinica-imagem/',
     name: 'Clínica de Imagem - '+ base_name,
     component: ClinicImagem,
-    redirect: { path: "/exames" },
+    redirect: { path: "/clinica-imagem/exames" },
     children: [
       {
         path: "/clinica-imagem/exames",
-        name:'Dia do bebê - '+ base_name,
+        name:'Exames - '+ base_name,
         component: () => import("@/components/clinicimage/ExamsClinicImage.vue")
       },
       {
@@ -116,12 +171,12 @@ const routes = [
         name: 'Sobre - '+ base_name,
         component: () => import("@/components/clinicimage/AboutClinicImage.vue")
       },
-      {
-        path: "/clinica-imagem/noticias",
-        name: 'Notícias - '+ base_name,
-        component: () => import("@/components/clinicimage/NewsClinicImage.vue")
-      },
     ]
+  },
+  {
+    path: "/clinica-imagem/exames/:exame",
+    name:'Exame - '+ base_name,
+    component: () => import("@/components/clinicimage/ExamsItem.vue")
   },
 ]
 
